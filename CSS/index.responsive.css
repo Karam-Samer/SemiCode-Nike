@@ -87,7 +87,9 @@
         margin: auto;
     }
 
-    .popup .box {
+    .popup .box,
+    .popup[data-popup-name="shop"] .box,
+    .popup[data-popup-name="wish"] .box {
         width: 300px;
     }
 
@@ -137,7 +139,7 @@
     }
 
     .popup[data-popup-name="product"] .box,
-    .popup[data-popup-name="shop"] .box{
+    .popup[data-popup-name="shop"] .box {
         width: 750px;
     }
 }
@@ -178,4 +180,3 @@
         margin-top: 0;
     }
 }
-

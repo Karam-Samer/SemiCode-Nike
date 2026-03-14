@@ -26,6 +26,7 @@ function changeMainImage(imgName, imgEle, commonName) {
 
 function openPopup(popupName) {
     let popupEle = document.querySelector(`.popup[data-popup-name="${popupName}"]`);
+    document.body.style.overflow = "hidden";
     popupEle.classList.add("active");
     setTimeout(function () {
         popupEle.classList.add("show");
@@ -37,6 +38,7 @@ function closePopup() {
     currentPopup.classList.remove("show");
     setTimeout(function () {
         currentPopup.classList.remove("active");
+        document.body.style.overflow = "auto";
     }, 1000);
 }
 

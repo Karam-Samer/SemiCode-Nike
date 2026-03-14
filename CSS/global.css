@@ -106,6 +106,7 @@ body {
 .popup.active[data-popup-name="shop"],
 .popup.active[data-popup-name="wish"] {
     display: block;
+    overflow-y: auto;
 }
 
 .popup .box {
@@ -115,6 +116,7 @@ body {
     background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
     position: relative;
     transform: translateY(-100%);
+    overflow: hidden;
     opacity: 0;
     transition-duration: 1s;
 }
@@ -123,6 +125,7 @@ body {
 .popup[data-popup-name="wish"] .box {
     margin: 20px auto;
     width: 750px;
+    overflow-y: auto;
 }
 
 .popup.show .box {
@@ -168,6 +171,3 @@ body {
     box-shadow: #00000040 0 54px 55px, #0000001f 0 -12px 30px, #0000001f 0 4px 6px, #0000002b 0 12px 13px, #00000017 0 -3px 5px;
 }
 
-img{
-    user-select: none;
-}
