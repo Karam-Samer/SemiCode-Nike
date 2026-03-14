@@ -279,7 +279,10 @@ wishlist.forEach(function (wishProduct) {
 searchEle.addEventListener("submit", function (e) {
     e.preventDefault();
     let searchInput = searchEle.querySelector("input").value.trim().toLowerCase();
-    if (searchInput == "") return;
+    if (searchInput == ""){
+        alert("Please enter a product name to search for.");
+        return;
+    }
     let foundProduct = products.find(function (product) {
         return product.name.toLowerCase().includes(searchInput);
     });
