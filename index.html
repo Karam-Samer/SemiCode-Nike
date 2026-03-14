@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike</title>
+  <link rel="shortcut icon" href="images/first-logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="CSS/all.min.css">
+  <link rel="stylesheet" href="CSS/fonts.css">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/global.css">
+  <link rel="stylesheet" href="CSS/keyframes.css">
+  <link rel="stylesheet" href="CSS/index.css">
+  <link rel="stylesheet" href="CSS/index.responsive.css">
+  <script src="JS/bootstrap.min.js" defer></script>
+  <script src="JS/shoes.js" defer></script>
+  <script src="JS/function.js" defer></script>
+  <script src="JS/index.js" defer></script>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img id="Logo" src="images/first-logo.png" alt="" class="img-fluid"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-0">
+          <li class="nav-item me-0 mb-2 me-lg-3">
+            <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+          </li>
+          <li class="nav-item me-0 mb-2 me-lg-3">
+            <a class="nav-link" href="#Latest">Latest</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Featured">Featured</a>
+          </li>
+        </ul>
+        <ul class="list-unstyled d-flex mb-0">
+          <li class="me-3"><i class="fa-solid fa-heart" onclick="openPopup('wish')"></i></li>
+          <li class="me-3"><i class="fa-solid fa-cart-shopping" onclick="openPopup('shop')"></i></li>
+          <li><i class="fa-solid fa-user" onclick="openPopup('login')"></i></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header id="Home">
+    <div id="ks-carousel" class="vh-100">
+      <div class="ks-carousel-inner h-100">
+        <div class="ks-carousel-item h-100" data-color-name="first-color">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-5 part1">
+                <div class="item">
+                  <h4 class="mainColor">Nike Red Shoes</h4>
+                  <h2 class="h1">Nike Metcon Shoes</h2>
+                  <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores Et Eos Eaque Veritatis
+                    Aut
+                    Laboriosam Earum Dolorem Iste Atque.</p>
+                  <button class="btn mainButton">See More</button>
+                </div>
+              </div>
+              <div class="col-md-7 part2">
+                <div class="item">
+                  <img src="images/home-text-1.png" alt="" class="img-fluid">
+                  <img src="images/home-shoe-1.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ks-carousel-item h-100" data-color-name="second-color">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-5 part1">
+                <div class="item">
+                  <h4 class="mainColor">Nike Blue Shoes</h4>
+                  <h2 class="h1">Nike Metcon Shoes</h2>
+                  <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores Et Eos Eaque Veritatis
+                    Aut
+                    Laboriosam Earum Dolorem Iste Atque.</p>
+                  <button class="btn mainButton">See More</button>
+                </div>
+              </div>
+              <div class="col-md-7 part2">
+                <div class="item">
+                  <img src="images/home-text-2.png" alt="" class="img-fluid">
+                  <img src="images/home-shoe-2.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ks-carousel-item h-100" data-color-name="third-color">
+          <div class="container h-100">
+            <div class="row h-100">
+              <div class="col-md-5 part1">
+                <div class="item">
+                  <h4 class="mainColor">Nike Yellow Shoes</h4>
+                  <h2 class="h1">Nike Metcon Shoes</h2>
+                  <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Repellat Maiores Et Eos Eaque Veritatis
+                    Aut
+                    Laboriosam Earum Dolorem Iste Atque.</p>
+                  <button class="btn mainButton">See More</button>
+                </div>
+              </div>
+              <div class="col-md-7 part2">
+                <div class="item">
+                  <img src="images/home-text-3.png" alt="" class="img-fluid">
+                  <img src="images/home-shoe-3.png" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="next mainButton"><i class="fa-solid fa-angle-right"></i></button>
+      <button class="prev mainButton"><i class="fa-solid fa-angle-left"></i></button>
+    </div>
+
+  </header>
+
+  <section id="Offer">
+    <div class="row g-0">
+      <div class="part1 col-sm-6 bg-dark">
+        <div class="item">
+          <a href="#">
+            <img src="images/home-banner-1.png" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+      <div class="part2 col-sm-6 bg-dark">
+        <div class="item">
+          <a href="#">
+            <img src="images/home-banner-2.png" alt="" class="img-fluid">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Latest" class="py-5">
+    <div class="container">
+      <div class="title text-center mb-5">
+        <h2>Latest Products</h2>
+        <img src="images/first-correct.png" alt="">
+      </div>
+      <div class="content">
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="Featured" class="py-5">
+    <div class="container">
+      <div class="title text-center mb-5">
+        <h2>Featured Products</h2>
+        <img src="images/first-correct.png" alt="">
+      </div>
+      <div class="content">
+        <div class="row">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="popup" data-popup-name="login" onclick="closePopup()">
+    <div class="box rounded-4 p-4">
+      <div class="head mb-4 text-center">
+        <h3 class="mainColor">Login</h3>
+        <i class="fa-regular fa-circle-xmark mainColor" onclick="closePopup()"></i>
+      </div>
+      <div class="body">
+        <form>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="UserName *" name="userName" id="UserName" required>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password *" name="password" id="Password" required>
+          </div>
+          <div class="input-group mb-3">
+            <button class="btn btn-success w-100">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" data-popup-name="shop" onclick="closePopup()">
+    <div class="box rounded-4 p-4">
+      <div class="head mb-4 text-center">
+        <h3 class="mainColor">Shop</h3>
+        <i class="fa-regular fa-circle-xmark mainColor" onclick="closePopup()"></i>
+      </div>
+      <div class="body">
+        <p class="alert alert-warning text-center">Your cart is empty</p>
+
+        <div class="row">
+
+        </div>
+        <button class="btn btn-outline-success d-block w-100 d-none">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" data-popup-name="wish" onclick="closePopup()">
+    <div class="box rounded-4 p-4">
+      <div class="head mb-4 text-center">
+        <h3 class="mainColor">Wishlist</h3>
+        <i class="fa-regular fa-circle-xmark mainColor" onclick="closePopup()"></i>
+      </div>
+      <div class="body">
+        <p class="alert alert-warning text-center">Your wishlist is empty</p>
+        <div class="row">
+        </div>
+        <button class="btn btn-outline-success d-block w-100 d-none">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" data-popup-name="product" onclick="closePopup()">
+    <div class="box rounded-4 p-4">
+    </div>
+  </div>
+
+  <div id="LoadingPage">
+    <img src="images/nike.gif" alt="">
+  </div>
+
+  <footer class="py-2 text-center">
+    <p class="m-0">© 2021 <span id="SemiCode">SemiCode</span>, Ltd. | All Rights Reserved .</p>
+  </footer>
+
+</body>
+
+</html>

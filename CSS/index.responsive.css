@@ -1,0 +1,181 @@
+@media (max-width: 1300px) {
+    nav.navbar .navbar-brand {
+        width: 25%
+    }
+
+    nav.navbar .navbar-toggler {
+        width: 40px;
+        height: 35px;
+        border: 1px solid var(--first-color);
+        border-radius: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav.navbar .navbar-toggler span {
+        display: block;
+        width: 60%;
+        height: 2px;
+        background-color: var(--first-color);
+    }
+
+    nav.navbar .navbar-toggler span:nth-of-type(2) {
+        margin-block: 5px;
+    }
+
+    nav.navbar .navbar-collapse {
+        padding-block: 10px;
+        background: #ada996;
+        background: -webkit-linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+        background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item,
+    nav.navbar .navbar-collapse ul:nth-of-type(2) {
+        text-align: center;
+        width: fit-content;
+        margin-inline: auto !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item a {
+        padding: 8px !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(2) {
+        margin-top: 15px;
+    }
+
+    header #ks-carousel .ks-carousel-inner .ks-carousel-item {
+        display: block;
+        padding-top: 100px;
+    }
+
+    header #ks-carousel>button {
+        top: initial !important;
+        bottom: 0 !important;
+        left: initial !important;
+    }
+
+    header #ks-carousel button.prev {
+        right: 80px;
+    }
+
+    header #ks-carousel button.next {
+        right: 20px;
+    }
+
+    header #ks-carousel .ks-carousel-inner .ks-carousel-item .part2 img:nth-of-type(1) {
+        width: 50%;
+        left: 10%;
+    }
+
+    header #ks-carousel .ks-carousel-inner .ks-carousel-item .part2 img:nth-of-type(2) {
+        width: 70%;
+    }
+
+    #Latest .content .product .part1 ul {
+        display: flex;
+    }
+
+    #Featured .content .product .item {
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .popup .box {
+        width: 300px;
+    }
+
+    .popup[data-popup-name="product"].active {
+        display: block;
+        overflow-y: auto;
+    }
+
+    .popup[data-popup-name="product"] .box {
+        margin: 20px auto;
+    }
+
+}
+
+@media (min-width: 371px) and (max-width: 1300px) {
+    nav.navbar .navbar-brand {
+        width: 20%;
+    }
+
+    .popup .box {
+        width: 350px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 1300px) {
+    .popup .box {
+        width: 500px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+    nav.navbar .navbar-brand {
+        width: 12%;
+    }
+
+    header #ks-carousel .ks-carousel-inner .ks-carousel-item .part2 img:nth-of-type(1) {
+        width: 70%;
+        left: 0;
+    }
+
+    header #ks-carousel .ks-carousel-inner .ks-carousel-item .part2 img:nth-of-type(2) {
+        width: 90%;
+    }
+
+    #Latest .content .product .part1 ul {
+        display: block;
+    }
+
+    .popup[data-popup-name="product"] .box,
+    .popup[data-popup-name="shop"] .box{
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+    nav.navbar {
+        padding: 0;
+    }
+
+    nav.navbar .navbar-brand {
+        width: 8%;
+    }
+
+    nav.navbar .navbar-toggler {
+        display: none;
+    }
+
+    nav.navbar .navbar-collapse {
+        background: transparent;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) {
+        margin-bottom: 0 !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item,
+    nav.navbar .navbar-collapse ul:nth-of-type(2) {
+        text-align: initial;
+        width: initial;
+        margin-inline: initial !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(1) li.nav-item:not(:last-child) {
+        margin-right: 15px !important;
+    }
+
+    nav.navbar .navbar-collapse ul:nth-of-type(2) {
+        margin-top: 0;
+    }
+}
+
