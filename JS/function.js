@@ -162,14 +162,14 @@ function openProductPopup(productId) {
     let product = getProduct(productId),
         popupBoxEle = document.querySelector(".popup[data-popup-name='product'] .box"),
         isProductInCart = productCart.find(item => item.id === product.id),
-        isProductInWishlist = wishlist.find(item => item.id === product.id),
-        productState = isProductInCart || isProductInWishlist;
+        isProductInWishlist = wishlist.find(item => item.id === product.id);
+    productState = isProductInCart || isProductInWishlist;
 
     popupBoxEle.innerHTML = `
     <div class="row product"
     data-product-id="${product.id}"
-    data-product-color="${productState ? productState.color : product.colors[0]}"
-    data-product-size="${productState ? productState.size : product.sizes[0]}">
+    data-product-color="${isProductInCart == undefined && isProductInWishlist == undefined ? product.colors[0] : isProductInCart == undefined ? isProductInWishlist.color : isProductInCart.color}"
+    data-product-size="${isProductInCart == undefined && isProductInWishlist == undefined ? product.sizes[0] : isProductInCart == undefined ? isProductInWishlist.size : isProductInCart.size}">
         <div class="col-md-6">
           <div class="selectedImg">
             <img src="images/products/${product.images[0]}" alt="" class="img-fluid">
@@ -225,6 +225,8 @@ function addButton(btn, productId, list) {
             color: productEle.dataset.productColor,
             size: productEle.dataset.productSize,
         };
+
+
 
     if (list === 'cart') {
         productCart.push(newOrder);
@@ -307,12 +309,12 @@ function addButton(btn, productId, list) {
             </div>
           </div>`;
     }
-    if(btn != null){
-    updateLocalStorage();
-    isShopOrWishPopupEmpty();
-    toggleCartBtn(btn, 'add', list);
-    btn.setAttribute("onclick", `removeButton(this, ${productId}, '${list}')`);
+    if (btn != null) {
+        toggleCartBtn(btn, 'add', list);
+        btn.setAttribute("onclick", `removeButton(this, ${productId}, '${list}')`);
     }
+    isShopOrWishPopupEmpty();
+    updateLocalStorage();
 }
 
 function removeButton(btn, productId, list) {
@@ -340,8 +342,12 @@ function removeButton(btn, productId, list) {
 }
 
 function updateCartInsideLi(that, change, value) {
-    let productEle = that.closest(".product");
+    let productEle = that.closest(".product"),
+        productId = Number(productEle.dataset.productId);
     productEle.setAttribute(`data-product-${change}`, value);
+    document.querySelectorAll(`#Featured .product[data-product-id="${productId}"]`).forEach(productEle => {
+        productEle.setAttribute(`data-product-${change}`, value);
+    });
 }
 
 function toggleCartBtn(that, status, list) {

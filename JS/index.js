@@ -160,9 +160,14 @@ latest.forEach(function (product) {
 });
 
 features.forEach(function (product) {
+    let isProductInCart = productCart.find(item => item.id === product.id),
+        isProductInWishlist = wishlist.find(item => item.id === product.id),
+        productState = isProductInCart || isProductInWishlist;
     featuresContentEle.innerHTML += `
     <div class="col-sm-6 col-lg-3 mb-3 product text-center"
     data-product-id="${product.id}"
+    data-product-color="${productState ? productState.color : product.colors[0]}"
+    data-product-size="${productState ? productState.size : product.sizes[0]}"
     >
         <div class="item p-3 rounded-3">
         ${product.discount == 0 ? '' : `<p class="offer">${(product.discount * 100)}%</p>`}
