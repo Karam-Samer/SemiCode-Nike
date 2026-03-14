@@ -110,7 +110,7 @@ body {
 }
 
 .popup .box {
-    width: 400px;
+    width: 750px;
     background: #ada996;
     background: -webkit-linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
     background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
@@ -119,6 +119,10 @@ body {
     overflow: hidden;
     opacity: 0;
     transition-duration: 1s;
+}
+
+.popup[data-popup-name="login"] .box {
+    width: 400px;
 }
 
 .popup[data-popup-name="shop"] .box,
