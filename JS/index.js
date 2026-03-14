@@ -13,6 +13,8 @@ let carousel = document.querySelector("header #ks-carousel"),
     featuresContentEle = document.querySelector("#Featured .content .row"),
     popupCartBody = document.querySelector(".popup[data-popup-name='shop'] .box .body .row"),
     popupWishlistBody = document.querySelector(".popup[data-popup-name='wish'] .box .body .row"),
+    wishlistCountEle = document.querySelector(".count-w"),
+    shopCountEle = document.querySelector(".count-s"),
     productCart = [],
     wishlist = [];
 
@@ -23,6 +25,7 @@ if (localStorage.getItem("cart") == null) {
     wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 }
 
+updateCountEles();
 isShopOrWishPopupEmpty();
 
 

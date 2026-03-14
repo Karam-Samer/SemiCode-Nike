@@ -190,3 +190,12 @@ body::-webkit-scrollbar-thumb {
 img {
     user-select: none;
 }
+
+.count-w,
+.count-s {
+    position: absolute;
+    top: 45%;
+    left: 0px;
+    background: var(--main-color);
+    border-radius: 10px;
+}

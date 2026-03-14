@@ -46,8 +46,12 @@
           <button class="btn mainButton" type="submit">Search</button>
         </form>
         <ul class="list-unstyled d-flex mb-0">
-          <li class="me-3"><i class="fa-solid fa-heart" onclick="openPopup('wish')"></i></li>
-          <li class="me-3"><i class="fa-solid fa-cart-shopping" onclick="openPopup('shop')"></i></li>
+          <li class="me-3 position-relative"><i class="fa-solid fa-heart" onclick="openPopup('wish')"></i>
+            <p class="d-none count-w">0</p>
+          </li>
+          <li class="me-3 position-relative"><i class="fa-solid fa-cart-shopping" onclick="openPopup('shop')"></i>
+            <p class="d-none count-s">0</p>
+          </li>
           <li><i class="fa-solid fa-user" onclick="openPopup('login')"></i></li>
         </ul>
 

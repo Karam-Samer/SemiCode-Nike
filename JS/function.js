@@ -315,6 +315,7 @@ function addButton(btn, productId, list) {
     }
     isShopOrWishPopupEmpty();
     updateLocalStorage();
+    updateCountEles();
 }
 
 function removeButton(btn, productId, list) {
@@ -338,6 +339,7 @@ function removeButton(btn, productId, list) {
     updateLocalStorage();
     isShopOrWishPopupEmpty();
     toggleCartBtn(btn, 'remove', list);
+    updateCountEles();
     btn.setAttribute("onclick", `addButton(this, ${productId}, '${list}')`);
 }
 
@@ -416,3 +418,17 @@ function removeFromPopup(btn, list) {
 
 }
 
+function updateCountEles() {
+    if (wishlist.length > 0) {
+        wishlistCountEle.textContent = wishlist.length;
+        wishlistCountEle.classList.remove("d-none");
+    } else {
+        wishlistCountEle.classList.add("d-none");
+    }
+    if (productCart.length > 0) {
+        shopCountEle.textContent = productCart.length;
+        shopCountEle.classList.remove("d-none");
+    } else {
+        shopCountEle.classList.add("d-none");
+    }
+}
