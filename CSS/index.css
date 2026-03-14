@@ -278,8 +278,21 @@ header #ks-carousel button.prev {
     overflow: hidden;
 }
 
+
+
 #Featured .content .head {
     position: relative;
+}
+
+#Featured .content .head .text-appended{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition-duration: 1s;
+}
+
+#Featured .content .product:hover .head .text-appended {
+    opacity: 1;
+    transform: translateX(-10%);
 }
 
 #Featured .content .offer {
@@ -291,6 +304,7 @@ header #ks-carousel button.prev {
     position: absolute;
     top: 20px;
     right: -20px;
+    z-index: 2;
 }
 
 

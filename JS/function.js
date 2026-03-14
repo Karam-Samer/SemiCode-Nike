@@ -305,10 +305,12 @@ function addButton(btn, productId, list) {
             </div>
           </div>`;
     }
+    if(btn != null){
     updateLocalStorage();
     isShopOrWishPopupEmpty();
     toggleCartBtn(btn, 'add', list);
     btn.setAttribute("onclick", `removeButton(this, ${productId}, '${list}')`);
+    }
 }
 
 function removeButton(btn, productId, list) {
@@ -396,18 +398,13 @@ function removeFromPopup(btn, list) {
     if (list === 'cart') {
         productCart = productCart.filter(product => product.id != productId);
         popupCartBody.querySelector(`.product[data-product-id="${productId}"]`).remove();
-        let mainBtn = document.querySelector(`.product[data-product-id="${productId}"] .buttons .btn`);
-        toggleCartBtn(mainBtn, 'remove', 'cart');
-        mainBtn.setAttribute("onclick", `addButton(this, ${productId}, 'cart')`);
     } else if (list === 'wishlist') {
         wishlist = wishlist.filter(product => product.id != productId);
         popupWishlistBody.querySelector(`.product[data-product-id="${productId}"]`).remove();
-        let mainBtn = document.querySelector(`.product[data-product-id="${productId}"] .buttons .btn:last-child`);
-        toggleCartBtn(mainBtn, 'remove', 'wishlist');
-        mainBtn.setAttribute("onclick", `addButton(this, ${productId}, 'wishlist')`);
     }
 
     updateLocalStorage();
     isShopOrWishPopupEmpty();
 
 }
+

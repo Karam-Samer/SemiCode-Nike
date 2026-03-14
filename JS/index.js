@@ -4,6 +4,7 @@ let carousel = document.querySelector("header #ks-carousel"),
     mySliders = carousel.querySelectorAll(".ks-carousel-item"),
     navEle = document.querySelector("nav"),
     heightOfNav = navEle.clientHeight,
+    searchEle = document.querySelector("nav form"),
     correctImgs = document.querySelectorAll("section .title img"),
     navLinks = document.querySelectorAll("nav .nav-link"),
     loadingPage = document.querySelector("#LoadingPage"),
@@ -160,11 +161,14 @@ latest.forEach(function (product) {
 
 features.forEach(function (product) {
     featuresContentEle.innerHTML += `
-    <div class="col-sm-6 col-lg-3 mb-3 product text-center">
+    <div class="col-sm-6 col-lg-3 mb-3 product text-center"
+    data-product-id="${product.id}"
+    >
         <div class="item p-3 rounded-3">
-            <p class="offer">-16%</p>
-            <div class="head pb-5">
-            <div class="selectedImg">
+        ${product.discount == 0 ? '' : `<p class="offer">${(product.discount * 100)}%</p>`}
+        <div class="head pb-5">
+        <p class="text-appended bg-primary rounded-5">Double Click To add to wishlist</p>
+        <div class="selectedImg">
                 <img src="images/products/${product.images[0]}" alt="" class="img-fluid">
             </div>
             <i onclick="openProductPopup(${product.id})" class="fa-solid fa-magnifying-glass rounded-circle"></i>
@@ -265,4 +269,53 @@ wishlist.forEach(function (wishProduct) {
               </div>
             </div>
           </div>`;
+});
+
+searchEle.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let searchInput = searchEle.querySelector("input").value.trim().toLowerCase();
+    if (searchInput == "") return;
+    let foundProduct = products.find(function (product) {
+        return product.name.toLowerCase().includes(searchInput);
+    });
+
+    if (!foundProduct) {
+        alert("No product found with this name");
+        return;
+    }
+
+    let product = document.querySelector(`.product[data-product-id="${foundProduct.id}"]`);
+    if (!product) {
+        alert("Product found but not rendered on page");
+        return;
+    }
+    window.scrollTo({
+        top: product.offsetTop - heightOfNav
+    });
+    console.log(product.children[0]);
+    product.children[0].classList.add("bg-success", "bg-opacity-10");
+    setTimeout(function () {
+        product.children[0].classList.remove("bg-success", "bg-opacity-10")
+    }, 2000);
+});
+
+
+let featuresProducts = featuresContentEle.querySelectorAll(".product");
+featuresProducts.forEach(function (product) {
+    product.addEventListener("dblclick", function (e) {
+        let productId = Number(product.dataset.productId);
+
+        if (wishlist.find(item => item.id === productId)) {
+            return;
+        }
+
+        addButton(null, productId, "wishlist");
+        updateLocalStorage();
+        isShopOrWishPopupEmpty();
+
+        product.children[0].classList.add("bg-danger", "bg-opacity-10");
+        setTimeout(function () {
+            product.children[0].classList.remove("bg-danger", "bg-opacity-10");
+        }, 900);
+    });
 });
