@@ -284,16 +284,48 @@ header #ks-carousel button.prev {
     position: relative;
 }
 
-#Featured .content .head .text-appended{
+#Featured .content .head .text-appended {
     opacity: 0;
-    transform: translateX(-100%);
-    transition-duration: 1s;
+    transform: translate(-50%, -10px);
+    transition: 0.3s ease;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 5;
+    pointer-events: none;
 }
 
 #Featured .content .product:hover .head .text-appended {
     opacity: 1;
-    transform: translateX(-10%);
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+
+#Featured .content .head p.text-appended i {
+    position: static;
+    font-size: inherit;
+    color: #fff;
+    transform: none;
+    opacity: 1;
+    display: inline-flex;
+    box-shadow: none;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    cursor: default;
+}
+
+#Featured .content .product:hover .head p.text-appended i {
+    animation: pulse 1s infinite;
+}
+
+
 
 #Featured .content .offer {
     color: #fff;
@@ -360,7 +392,7 @@ header #ks-carousel button.prev {
     border-radius: 100%;
 }
 
-#Featured .content ul li.active{
+#Featured .content ul li.active {
     background-color: var(--main-color);
 }
 

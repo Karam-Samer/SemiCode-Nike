@@ -350,6 +350,7 @@ function updateCartInsideLi(that, change, value) {
     document.querySelectorAll(`#Featured .product[data-product-id="${productId}"]`).forEach(productEle => {
         productEle.setAttribute(`data-product-${change}`, value);
     });
+
 }
 
 function toggleCartBtn(that, status, list) {
@@ -415,7 +416,13 @@ function removeFromPopup(btn, list) {
 
     updateLocalStorage();
     isShopOrWishPopupEmpty();
+    updateCountEles();
 
+    let pageProductBtn = document.querySelector(`.product[data-product-id="${productId}"] .buttons .btn[onclick*="${list}"]`);
+    if (pageProductBtn) {
+        toggleCartBtn(pageProductBtn, 'remove', list);
+        pageProductBtn.setAttribute("onclick", `addButton(this, ${productId}, '${list}')`);
+    }
 }
 
 function updateCountEles() {

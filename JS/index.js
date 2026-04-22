@@ -175,7 +175,9 @@ features.forEach(function (product) {
         <div class="item p-3 rounded-3">
         ${product.discount == 0 ? '' : `<p class="offer">${(product.discount * 100)}%</p>`}
         <div class="head pb-5">
-        <p class="text-appended bg-primary rounded-5">Double Click To add to wishlist</p>
+        <p class="text-appended">
+    <i class="fa-solid fa-heart me-1"></i> Double Click To Wishlist
+</p>
         <div class="selectedImg">
                 <img src="images/products/${product.images[0]}" alt="" class="img-fluid">
             </div>
@@ -282,7 +284,7 @@ wishlist.forEach(function (wishProduct) {
 searchEle.addEventListener("submit", function (e) {
     e.preventDefault();
     let searchInput = searchEle.querySelector("input").value.trim().toLowerCase();
-    if (searchInput == ""){
+    if (searchInput == "") {
         alert("Please enter a product name to search for.");
         return;
     }
