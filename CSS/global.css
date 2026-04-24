@@ -36,6 +36,7 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid var(--main-color);
     background-color: transparent;
     transition-duration: .5s;
+    cursor: pointer;
 }
 
 .mainButton.remove {
