@@ -1,4 +1,8 @@
 @media (max-width: 1300px) {
+    .title img {
+        width: 40%;
+    }
+
     nav.navbar .navbar-brand {
         width: 25%
     }
@@ -88,7 +92,7 @@
     .popup .box,
     .popup[data-popup-name="shop"] .box,
     .popup[data-popup-name="wish"] .box {
-        width: 300px;
+        width: 280px;
     }
 
     .popup[data-popup-name="product"].active {
@@ -113,6 +117,9 @@
 }
 
 @media (min-width: 577px) and (max-width: 1300px) {
+    .title img {
+        width: 30%;
+    }
 
     .popup .box,
     .popup[data-popup-name="shop"] .box,
@@ -123,6 +130,10 @@
 }
 
 @media (min-width: 769px) and (max-width: 1300px) {
+    .title img {
+        width: 25%;
+    }
+
     nav.navbar .navbar-brand {
         width: 12%;
     }
@@ -148,6 +159,10 @@
 }
 
 @media (min-width: 992px) and (max-width: 1300px) {
+    .title img {
+        width: 20%;
+    }
+
     nav.navbar {
         padding: 0;
     }
